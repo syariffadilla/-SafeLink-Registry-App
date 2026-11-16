@@ -6,11 +6,24 @@ Studionet (chain 61999). It calls the deployed contract — nothing is mocked.
 - **Live demo:** https://safe-link-on-gen-layer.vercel.app/
 - **Contract:** `0x2920A2340F47226490Ac645bDCE64C390Fac40DA`
   ([Studio explorer](https://explorer-studio.genlayer.com/address/0x2920A2340F47226490Ac645bDCE64C390Fac40DA))
-- **Contract source + tests:** [SafeLink-On-GenLayer](https://github.com/syariffadilla/SafeLink-On-GenLayer)
+- **Contract source (in this repo):** [`contracts/safelink.py`](contracts/safelink.py)
+  + [`contracts/safelink_logic.py`](contracts/safelink_logic.py) — the exact
+  source deployed at the address above. Full history + tests:
+  [SafeLink-On-GenLayer](https://github.com/syariffadilla/SafeLink-On-GenLayer)
 - **Intelligent Contract:** accepted, 100 Builder pts, 13 Nov 2026.
 - **Design:** warm paper / ink, flat verdict colours, serif + grotesque + mono.
   No gradients, no glassmorphism, no marketing hero — the check form and the
   live registry data are the page.
+
+## Smart contract
+
+The Intelligent Contract this app calls lives in this repository under
+`contracts/` — `safelink.py` (the contract) and `safelink_logic.py` (the
+pure logic it is assembled from, byte-identical). It is the exact source
+deployed at `0x2920A2340F47226490Ac645bDCE64C390Fac40DA` on GenLayer
+Studionet (chain 61999). The app's `src/lib/safelink.js` calls `check_url`,
+`get_verdict`, `is_safe`, `list_entries`, `get_stats`, `get_brands`,
+`dispute_url` and `request_recheck` on that deployed contract.
 
 ## What it does (contract method in brackets)
 
